@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static long ft_atol(const char *str) // dlaczego static i const?
+static long ft_atol(const char *str) // tutaj jest static, poniewaz wykorzystuje ft_atol tylko w tym pliku
 {
 	long	num;
 	int		sign;

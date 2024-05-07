@@ -65,7 +65,7 @@ static char *get_next_word(char *str, char separator)
 // - w srodku sa "strings" ktore zawieraja wyciagniete liczby oddzielone separatorem
 // '\0' i NULL na koncu sa dlatego, poniewaz chce, aby mialo to budowe jak argv (przyda sie to podczas dalszych dzialan)
 
-char **ft_split(char *str, char separator)
+char **ft_split(char *str, char separator) // (**) to wskaznik do wskaznika, czyli tablica wskaznikow do lancuchow znakow
 {
 	int		words_num;
 	char	**strings; //to sa poszczegolne ciagi znakow, oddzielone separatorem, czyli poszczegolne liczby, ktore wyciagamy ze stringa
@@ -75,7 +75,7 @@ char **ft_split(char *str, char separator)
 	words_num = count_words(str, separator);
 	if (!words_num)
 		exit (1); // bo jesli words_num wyrzuci blad to musimy wymusic zakonczenie programu bo to oznacza ze jest blad
-	strings = malloc(sizeof(char *) * (size_t)(words_num + 2)); // +2 poniewaz dodatkowe miesjce dla koncwowego NULL i dodatkowe '\0' na poczatku zeby odzwierciedlic argv
+	strings = malloc(sizeof(char *) * (size_t)(words_num + 2)); // +2 poniewaz dodatkowe miesjce dla koncowego NULL i dodatkowe '\0' na poczatku zeby odzwierciedlic argv
 	if (strings == NULL)
 		return (NULL);
 	while (words_num-- >= 0)

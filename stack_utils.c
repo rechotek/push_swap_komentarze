@@ -28,7 +28,7 @@ t_stack *find_last_node(t_stack *head)
 // a previous = last_node, czyli ten, ktory ostatnio probowalem "wgrac"
 // jesli to jest pierwszy node to przechowuje wskaznik na stos a
 
-void append_node(t_stack **stack, int nbr)
+void append_node(t_stack **stack, int nbr) // jest t_stack **stack, poniewaz wtedy moge zmienic wartosc wskaznika stack w funkcji wywolujacej. Jeśli stack byłby przekazany jako pojedynczy wskaźnik (t_stack *stack), wszelkie zmiany wprowadzone w stack w funkcji append_node nie byłyby widoczne po powrocie do funkcji wywołującej.
 {
 	t_stack *node;
 	t_stack *last_node;

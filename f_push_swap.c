@@ -60,6 +60,14 @@ static void move_nodes(t_stack **a, t_stack **b)
 	pa(a, b);
 }
 
+// Funkcje init_nodes i move_nodes mają różne sygnatury funkcji, co oznacza, że oczekują różnych typów argumentów.
+
+// Funkcja init_nodes oczekuje dwóch argumentów typu t_stack * (wskaźników na węzły stosu), dlatego przekazujesz *a i *b jako argumenty. Operator * jest używany do dereferencji wskaźników a i b, co oznacza, że zamiast przekazywać wskaźniki, przekazujesz wartości, na które te wskaźniki wskazują.
+
+// Z drugiej strony, funkcja move_nodes oczekuje dwóch argumentów typu t_stack ** (wskaźników do wskaźników na węzły stosu), dlatego przekazujesz a i b jako argumenty bez dereferencji. To oznacza, że przekazujesz same wskaźniki.
+
+// Różnica wynika z tego, że move_nodes może zmieniać wartości wskaźników a i b (na przykład, przesuwając węzły w liście), więc musi mieć do nich bezpośredni dostęp. Z drugiej strony, init_nodes tylko odczytuje wartości węzłów, na które wskazują a i b, więc nie potrzebuje modyfikować samych wskaźników.
+
 void push_swap(t_stack **a, t_stack **b)
 {
 	t_stack *smallest;

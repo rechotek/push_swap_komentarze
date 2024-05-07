@@ -6,7 +6,7 @@
 #    By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/24 19:40:05 by mrechuli          #+#    #+#              #
-#    Updated: 2024/04/28 15:38:13 by mrechuli         ###   ########.fr        #
+#    Updated: 2024/05/07 17:28:01 by mrechuli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,8 @@ $(ARCHIVE) : $(OBJS)
 %.o : %.c 
 	$(CC) $(CFLAGS) -c $< -o $@ 
 	
-bonus : 
-	cd ../checker && make	
+# bonus : 
+# 	cd ../checker && make	
 	
 clean :
 	rm -f $(OBJS) $(ARCHIVE)

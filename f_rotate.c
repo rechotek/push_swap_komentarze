@@ -31,7 +31,7 @@ static void rotate (t_stack **stack) // zrozumiec pointery tutaj
 	int		x;
 
 	x = stack_len(*stack);
-	if (stack == NULL || *stack == NULL || x == 1)
+	if (stack == NULL || *stack == NULL || x == 1) // stack == NULL sprawdza czy mam wskaznik do wezla, a *stack == NULL sprawdza czy sam wezel istnieje
 		return ;
 	last = find_last_node(*stack); // 9
 	last->next = *stack; // ustawiam wartosc next liczby 9 na poczatek stosu, czyli 4; 9 (P->8, N->4)
